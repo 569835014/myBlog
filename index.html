@@ -13,10 +13,27 @@
     <link rel="stylesheet" href="css/screen.css">
     <link rel="stylesheet" href="css/base.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+        @media only screen and (max-width:1024px){
+            #music{
+                right: 20px;
+                bottom: 20%;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="content">
     <div class=" container">
+        <div id="music">
+            <img src="image/music.png" alt="音乐">
+            <audio id="myAudio" autoplay loop hidden="true">
+                <source src="media/ifYou.mp3" type="audio/mpeg">
+                <source src="media/ifYou.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
         <div id="top">
             <img src="image/top.png" alt="回到顶部">
         </div>
@@ -27,7 +44,7 @@
             <p class="myid">RedSpite</p>
         </div>
         <div class="my-sort center">
-            <a href="chat.html">闲聊</a>
+            <a href="cv.html">关于我</a>
             <a href="index.html">点滴</a>
             <a href="message.html">留言</a>
         </div>
@@ -179,7 +196,9 @@
 <script src="js/jquery-1.11.1.min.js"></script>
 <script>
     $(document).ready(function () {
+        //头像淡入
        $(".header-box").addClass("fadein");
+        //回到顶部
         $("#top").click(function () {
             $('html,body').animate({
                 scrollTop: 0
@@ -191,9 +210,19 @@
             $(window).scroll(function() {
                 var s = $(window).scrollTop();
                 s > min_height ? $('#top').fadeIn() : $('#top').fadeOut();
-//                console.log(s,min_height);
             });
         }
+        //音乐关闭
+        $("#music").bind("click", function () {
+           $(this).toggleClass("pause");
+            var audio = $("#music audio")[0];
+            if(audio.paused){
+                audio.play();//audio.play();// 这个就是播放
+            }else{
+                audio.pause();// 这个就是暂停
+            }
+        });
+
     });
 </script>
 <script>
