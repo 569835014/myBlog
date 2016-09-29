@@ -19,6 +19,10 @@ span,a{
     line-height: 45px;
     display: none;
     z-index: 1000;
+    opacity: 0.6;
+}
+#top:hover{
+    opacity: 1;
 }
 .container{
     max-width: 1000px!important;
@@ -41,6 +45,7 @@ span,a{
 }
 .fadein{
     transform: translateY(0);
+    -webkit-transform: translateY(0);
     opacity: 1;
     transition: 1s;
 }
@@ -454,6 +459,7 @@ p.myid{
     bottom: 10%;
     cursor: pointer;
     animation: rotate 3s infinite linear;
+    -webkit-animation: rotate 3s infinite linear;
 }
 #music:hover,#music.pause{
     animation: none;
