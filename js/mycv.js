@@ -10,7 +10,7 @@ $(function() {
     $(".bg-img li:nth-child(2)").show();
     setInterval(function () {
         var randomBgIndex = Math.round(Math.random() * length);
-        $("#section1 .bg-img li").eq(randomBgIndex).fadeIn(300).siblings().hide(300);
+        $("#section1 .bg-img li").eq(randomBgIndex).fadeIn(300).siblings().hide(0);
     },5000);
 });
 

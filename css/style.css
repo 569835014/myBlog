@@ -1,6 +1,7 @@
 span,a{
     font-size: calc(12rem/14);
 }
+
 .content{
     padding: 4.29rem 0 ;
     margin: 0 auto;
@@ -221,7 +222,7 @@ p.myid{
 }
 .code{
     max-width: 1000px;
-    margin: 3em auto;
+    margin: 1em auto 2em;
 }
 .code li{
     display: none;
@@ -246,7 +247,7 @@ p.myid{
     color: #222;
 }
 .stx-wrap .stx-line-wrap .stx-line-code{
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .codebox{
 }
@@ -481,4 +482,26 @@ p.myid{
     100%{
         -webkit-transform: rotate(360deg);
     }
+}
+
+#bannerm{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#bannerm li{
+    position: absolute;
+    width: 100%;
+    height: 0;
+    padding-bottom: 30%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#bannerm li.active{
+    display: block;
+}
+#bannerm li img{
+    width: 100%;
 }

@@ -33,7 +33,7 @@ $(function() {
         $(window).scroll(function() {
             var s = $(window).scrollTop();
             s > min_height ? $('#top').fadeIn() : $('#top').fadeOut();
-            console.log(s,min_height);
+            //console.log(s,min_height);
         });
     }
 });
