@@ -1,7 +1,23 @@
 /**
  * Created by RedSpite on 2016/9/27.
  */
+
+
+//背景随机
 $(function() {
+
+    var length = 3;
+    $(".bg-img li:nth-child(2)").show();
+    setInterval(function () {
+        var randomBgIndex = Math.round(Math.random() * length);
+        $("#section1 .bg-img li").eq(randomBgIndex).fadeIn(300).siblings().hide(300);
+    },5000);
+});
+
+$(function() {
+    //编辑器控制
+    $("h4,.nav b").css("color","#fff");
+
     var _top;
     var top1 = $("#section2").offset().top-30;
     var top2 = $("#section3").offset().top-30;
@@ -12,7 +28,9 @@ $(function() {
     var tops = [top1,top2,top3,top4,top5,top6];
     $(window).resize();
     $(".fades").addClass("fadesin");
-
+    $(" h1.fade").addClass("fadesin1");
+    $(" h3.fade").addClass("fadesin2");
+    $(" span.fade").addClass("fadesin3");
     //回到顶部
     $("#top").click(function () {
         $('html,body').stop().animate({
@@ -33,9 +51,6 @@ $(function() {
         $(".nav-ul li").eq(index).addClass("active").siblings().removeClass("active");
         $(".nav-xs-ul li").eq(index).addClass("active").siblings().removeClass("active");
     });
-
-
-
     //关于我
     $("#abMe").bind("click", function () {
        $(".nav-ul li:nth-child(1)").click();
@@ -57,16 +72,13 @@ $(function() {
     function moveTo(){
         $('html,body').animate({
             scrollTop: _top
-        }, 700);
+        }, 500);
     }
     $(".nav-xs-ul li").click(function () {
        $(".nav-xs-ul").slideUp(300)
     });
-
-
     //页面滚动
     $(window).scroll(function () {
-
         //导航fixed
         var s = $(window).scrollTop();
         s > top1 ? $('#nav-bar').addClass("fixed") : $('#nav-bar').removeClass("fixed");
@@ -87,7 +99,8 @@ $(function() {
         }else if((s>top4)&&(s<top5)){
             $(".nav-ul li").eq(3).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(3).addClass("active").siblings().removeClass("active");
-            $("#section5").addClass("active")
+            $("#section5").addClass("active");
+
         }else if((s>top5)&&(s<top6)){
             $(".nav-ul li").eq(4).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(4).addClass("active").siblings().removeClass("active");
@@ -103,6 +116,7 @@ $(function() {
 
 
 });
+
 $(window).resize(function (){
     var wid = $(window).width();
     if(wid>768){

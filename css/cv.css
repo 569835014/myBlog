@@ -1,9 +1,11 @@
 
 body{
     background: none;
+    background: #fafafa;
 }
 .container{
     max-width: 1200px!important;
+    overflow: hidden;
 }
 .fl{
     float: left;
@@ -43,32 +45,56 @@ body{
 #section1{
     color: #2c3e50;
     position: relative;
-    background: url(../image/intro-bg.jpg) no-repeat  center;
+    /*background-image: url(../image/intro-bg.jpg);*/
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    overflow: hidden;
 }
 #section5{
     background: url("../image/skills-bg.jpg") no-repeat center;
+    background-attachment: fixed;
+}
+#section7{
+    background: url("../image/achivements-bg.jpg") no-repeat center;
     background-attachment: fixed;
 }
 .cv-container{
     width:100%;
     margin:0 auto;
 }
-.fades{
+.fades, .fade{
     transform: translateY(2em);
     -webkit-transform: translateY(2em);
     opacity:0;
 }
+.section.active .fadesin1{
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+    transition: all 1s 0s;
+}
+.section.active .fadesin2{
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+    transition: all 1s 0.5s;
+}
+.section.active .fadesin3{
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+    transition: all 1s 1s;
+}
 .section.active .fadesin{
     transform: translateY(0);
     -webkit-transform: translateY(0);
-    opacity: 0.8;
+    opacity: 1;
     transition: all 1s 0.2s;
 }
 #section2 .fades img{
-    max-width: 100%;
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    width: 40%;
     border-radius: 50%;
 }
 
@@ -76,10 +102,20 @@ body{
     width: 100%;
     height: 100vh;
     position: relative;
+    padding-bottom: 20px;
 }
-
-#section2{
+.section{
+    min-height: 700px;
+}
+#section7{
+    min-height: 100vh;
+}
+#section2,  #section6{
     height: 80vh;
+}
+#section3, #section5{
+    height: 70vh;
+    padding-bottom: 100px;
 }
 
 #section1 h1{
@@ -89,24 +125,63 @@ body{
     margin: 50px 0 30px;
 
 }
+.bg-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.bg-img li{
+    position: absolute;
+    top:0;
+    left: 0;
+
+}
+.bg-img li{
+    width: 100%;
+    height: 100vh;
+    /*background-size: cover;*/
+    /*width: 0;*/
+    display: none;
+}
+.bg-img li:nth-child(1){
+    background: url(../image/bg1.jpg) no-repeat center ;
+    background-size: cover;
+}
+.bg-img li:nth-child(2){
+    background: url(../image/bg2.jpg) no-repeat center ;
+    background-size: cover;
+}
+.bg-img li:nth-child(3){
+    background: url(../image/bg3.jpg) no-repeat center ;
+    background-size: cover;
+}
+.bg-img li:nth-child(4){
+    background: url(../image/bg4.jpg) no-repeat center ;
+    background-size: cover;
+}
 #section1 h3{
     letter-spacing: 3px;
-    color: #96a3b2;
+    /*color: #96a3b2;*/
     font-size: 30px;
     margin: 40px 0;
 }
 .myIntro{
-    padding: 10% 0 0 0;
+    padding: 35vh 0 0 ;
     position: absolute;
     width:100%;
-    top:30%;
-    padding-left: 20%;
-    margin-top: -200px;
+    height: 100%;
+    top: 0;
+    left: 0;
     text-align: center;
     letter-spacing: 2px;
     transition: all 0.35s;
-    background: rgba(256,256,256,0.6);
-    padding-bottom: 10%;
+    background: rgba(256,256,256,0.5);
+}
+#section1  h1{
+    margin-top:0;
 }
 #section1 div.myIntro > span{
     display: inline-block;
@@ -114,14 +189,15 @@ body{
     height:50px;
     line-height: 48px;
     font-size: 16px;
-    color: #96a3b2;
-    border:  1px solid #96a3b2;
+    /*color: #96a3b2;*/
+    border:  1px solid ;
     border-radius: 5px;
     cursor: pointer;
     margin:  5px;
+    background: rgba(256,256,256,0.8);
 }
 #section1 div > span:hover, #section1 div > span.active{
-    background: #96a3b2;
+    background: #2c3e50;
     color: #fff;
 }
 
@@ -142,6 +218,7 @@ body{
     font-weight: bold;
     line-height: 70px;
     font-family: cursive;
+    color: #ffffff;
 }
 
 .nav-ul li{
@@ -223,9 +300,7 @@ body{
     background: url("../image/services-bg.jpg") no-repeat center;
     background-attachment: fixed;
 }
-#section3{
-    height: 70vh;
-}
+
 div.skill{
     padding: 15px;
 }
@@ -237,11 +312,12 @@ div.skill p{
     height: 80px;
     border-radius: 0!important;
 }
-div.skill .ptitle{
+.ptitle{
     color: #E87E04;
     margin: 2em 0 1em;
     font-size: 16px;
     font-family: "SimHei";
+    text-align: center;
 }
 #section4{
     height: auto;
@@ -280,6 +356,7 @@ div.skill .ptitle{
     font-size: 14px;
     text-align: center;
     margin: 10px 0;
+    padding: 0 1em;
 }
 #section4 .container > div .zp-cover img{
     width: 25px;
@@ -291,8 +368,8 @@ div.skill .ptitle{
     padding:  0 2em;
 }
 #section4 .container > div:hover .imgbox img{
-    -webkit-filter: brightness(0.1);
-    filter: brightness(0.1);
+    -webkit-filter: brightness(0.3);
+    filter: brightness(0.3);
 }
 
 #section4 .container>div .imgbox{
@@ -306,16 +383,178 @@ div.skill .ptitle{
     width: 100%;
     transition: all 0.3s ease;
 }
+
+/*
+    section5
+*/
+
+.wrap-box{
+    position: relative;
+    background: #dddddd;
+    margin: 0 auto;
+}
+
+.circle-wrap, .circle-wrap .percent, .wrap-box{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+.circle-wrap{
+    border: 10px solid #ddd;
+    position: absolute;
+    clip: rect(0,180px,180px,90px);/* 需要显示出来的全部*/
+}
+.circle-wrap.clip-auto{
+    clip:rect(auto, auto, auto, auto);
+}
+.circle-wrap .percent{
+    left: -10px;
+    top: -10px;
+    border: 10px solid #2c3e50;
+    position: absolute;
+}
+.circle-wrap .left-clip {
+    clip:rect( 0 80px 160px 0); /* 需要显示出来的左边*/
+    transition : transform ease;
+}
+.circle-wrap .right-clip {
+    clip: rect(0,160px,160px,80px); /* 需要显示出来的右边*/
+}
+.circle-wrap .right-clip.widt0{
+    width: 0;
+}
+.circle-num{
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    background: #fff;
+    z-index: 1;
+    line-height: 140px;
+    border-radius: 50%;
+}
+.circle-num span{
+    font-size: 30px;
+    color: #0c4b62;
+    margin-right: 3px;
+}
+#section5 .wrap-box .left-clip{
+    transform: rotate(180deg);
+}
+#section5.active .wrap-box:nth-child(1) .left-clip{
+    transform: rotate(324deg);
+    transition: 2s;
+}
+#section5.active .wrap-box:nth-child(2) .left-clip{
+    transform: rotate(324deg);
+    transition: 2s;
+
+}
+#section5.active .wrap-box:nth-child(3) .left-clip{
+    transform: rotate(306deg);
+    transition: 2s;
+
+}
+#section5.active .wrap-box:nth-child(4) .left-clip{
+    transform: rotate(288deg);
+    transition: 2s;
+
+}
+/*
+    section6
+*/
+
+#section6 .my-xp{
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+#section6 .my-xp:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1.5px;
+    background-color: #eee;
+}
+#section6 .my-xp li{
+    position: relative;
+    overflow: hidden;
+}
+
+#section6 .date-box{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #eee;
+    background: #fff;
+    border-radius:  50%;
+    padding-top: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -75px;
+}
+#section6 .my-work{
+    width: 40%;
+    text-align: right;
+}
+#section6 .my-xp strong{
+    color: #626e7c;
+    font-size: 16px;
+}
+#section6 .my-work p{
+    text-align: right;
+}
+#section6 .my-xp p.ptitle{
+    margin: 0.5em 0;
+}
+#section6 .date-box p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+}
+#section6 .my-school{
+    width: 40%;
+    float: right;
+}
+#section6 .my-school p, #section6 .my-school strong{
+    text-align: left;
+    display: block;
+}
+#section6 .my-xp li >div{
+    height: 150px;
+}
+#section6 .my-xp li:not(:first-child){
+    margin-top: 80px;
+}
+#section6 .my-xp li >div:last-child{
+    padding: 1em 0 0;
+}
+
+#section7.section h2 ,#section7.section p{
+    /*color: #fff;*/
+}
+#uyan_frame{
+    width: 100%;
+}
+h4{
+    color: #fff;
+}
+/*
+    屏幕宽度小于1224px
+*/
 @media only screen and (max-width:1224px){
+
     #section1 div.myIntro{
-        top: 60%;
-        background: rgba(256,256,256,0.6);
-        padding-left:0;
-        padding-bottom: 10%;
+
     }
     #section1 div.myIntro h1{
         font-size: 50px;
-        margin-top:0;
+
     }
     #section1 div.myIntro h3{
         font-size: 20px;
@@ -324,12 +563,36 @@ div.skill .ptitle{
     .nav-ul.nav-xs-ul {
         display: none;
     }
+
+    #section6 .fades{
+        width: 50%;
+        margin: 0 auto;
+    }
+    #section6 .date-box{
+        left: 0;
+        margin-left: 0;
+    }
+    #section6 .my-xp:before{
+        left: 85px;
+        margin-left: 0;
+    }
+    #section6 .my-xp .my-xp-box{
+        float: left;
+        width: 55%;
+        margin-left: 160px;
+
+    }
+    #section6 .my-xp .my-xp-box p,  #section6 .my-xp .my-xp-box strong{
+        text-align: left;
+        display: block;
+    }
 }
 @media only screen and (max-width:768px){
 
 
-    #section3,#section2{
-        height: 100vh;
+    #section3,#section2,#section6,#section5{
+        height: auto;
+        min-height: 100vh;
     }
     /*导航改变*/
     .nav-ul{
@@ -339,11 +602,24 @@ div.skill .ptitle{
     .more-nav{
         display: block;
     }
+    /*我的作品hover改变*/
+    #section4 .container > div .zp-cover{
+        display: block;
+    }
+    #section4 .container>div .imgbox img{
+        -webkit-filter: brightness(0.3);
+        filter: brightness(0.3);
+    }
+    #section6 .fades{
+        width: 80%;
+        margin: 0 auto;
+    }
+
 }
-@media only screen and (max-width:410px){
+@media only screen and (max-width:415px){
 
     #section1 div.myIntro h1{
-        font-size: 30px;
+        font-size: 28px;
     }
     #section1 div.myIntro h3{
         font-size: 16px;
@@ -363,9 +639,41 @@ div.skill .ptitle{
     .section hr{
         margin-bottom: 20px;
     }
-    div.skill .ptitle{
+    .ptitle{
         margin: 1em 0 0.5em;
     }
+    /*我的作品 字体改变*/
+    #section4.section .intros{
+        margin-bottom: 20px;
+    }
+    #section4 .container > div .zp-cover p{
+        font-size: 12px;
+
+    }
+    #section6 .fades{
+        width: 100%;
+        margin: 0 auto;
+    }
+    #section6 .date-box{
+        width: 100px;
+        height: 100px!important;
+    }
+    #section6 .date-box p{
+        font-size: 14px;
+        line-height: 15px;
+    }
+    #section6 .my-xp:before{
+        left: 65px;
+    }
+    #section6 .my-xp .my-xp-box{
+        margin-left: 60px;
+        margin-top: 110px;
+        width: 75%;
+    }
+    #section6 .my-xp li:not(:first-child){
+        margin-top: 20px;
+    }
+
 
 
 }
