@@ -489,12 +489,12 @@ p.myid{
     width: 100%;
     margin: 0 auto;
     position: relative;
-    min-height: 100px;
     overflow: hidden;
 }
 #bannerm ul{
     width: 400%;
     height: 100%;
+    overflow: hidden;
 }
 #bannerm li{
     position: relative;

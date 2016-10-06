@@ -395,14 +395,14 @@ div.skill p{
 }
 
 .circle-wrap, .circle-wrap .percent, .wrap-box{
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
 }
 .circle-wrap{
     border: 10px solid #ddd;
     position: absolute;
-    clip: rect(0,180px,180px,90px);/* 需要显示出来的全部*/
+    clip: rect(0,140px,140px,70px);/* 需要显示出来的全部*/
 }
 .circle-wrap.clip-auto{
     clip:rect(auto, auto, auto, auto);
@@ -414,24 +414,24 @@ div.skill p{
     position: absolute;
 }
 .circle-wrap .left-clip {
-    clip:rect( 0 80px 160px 0); /* 需要显示出来的左边*/
+    clip:rect( 0 70px 140px 0); /* 需要显示出来的左边*/
     transition : transform ease;
 }
 .circle-wrap .right-clip {
-    clip: rect(0,160px,160px,80px); /* 需要显示出来的右边*/
+    clip: rect(0,140px,140px,70px); /* 需要显示出来的右边*/
 }
 .circle-wrap .right-clip.widt0{
     width: 0;
 }
 .circle-num{
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     position: absolute;
     top: 10px;
     left:10px;
     background: #fff;
     z-index: 1;
-    line-height: 140px;
+    line-height: 120px;
     border-radius: 50%;
 }
 .circle-num span{
@@ -460,6 +460,10 @@ div.skill p{
     transform: rotate(288deg);
     transition: 2s;
 
+}
+#section5 .ptitle{
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 /*
     section6
@@ -587,12 +591,11 @@ h4{
         display: block;
     }
 }
-@media only screen and(max-width: 768px){
+@media only screen and (max-width: 768px){
     /*导航改变*/
     .nav-ul{
         display: none;
     }
-
     .more-nav{
         display: block;
     }
@@ -629,9 +632,10 @@ h4{
         font-size: 16px;
     }
     #section1 div.myIntro > span{
-        height: 30px;
-        line-height: 28px;
+        height: 35px;
+        line-height: 33px;
         font-size: 14px;
+        width: 200px;
     }
     #section3,#section2{
         height: 120vh;
@@ -653,6 +657,12 @@ h4{
     #section4 .container > div .zp-cover p{
         font-size: 12px;
 
+    }
+    #section5 .container.center{
+        margin-top: 40px;
+    }
+    #section4 .container > div .zp-cover img{
+        display: none;
     }
     #section6 .fades{
         width: 100%;
