@@ -10,8 +10,8 @@ $(function() {
     $(".bg-img li:nth-child(2)").show();
     setInterval(function () {
         var randomBgIndex = Math.round(Math.random() * length);
-        $("#section1 .bg-img li").eq(randomBgIndex).fadeIn(300).siblings().hide(0);
-    },5000);
+        $("#section1 .bg-img li").eq(randomBgIndex).fadeIn(1000).siblings().hide(0);
+    },7000);
 });
 
 $(function() {

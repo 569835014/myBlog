@@ -488,6 +488,7 @@ p.myid{
     width: 100%;
     margin: 0 auto;
     position: relative;
+    min-height: 100px;
 }
 #bannerm li{
     position: absolute;

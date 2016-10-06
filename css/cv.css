@@ -442,21 +442,21 @@ div.skill p{
 #section5 .wrap-box .left-clip{
     transform: rotate(180deg);
 }
-#section5.active .wrap-box:nth-child(1) .left-clip{
+#section5.active .fades>div:nth-child(1) .left-clip{
     transform: rotate(324deg);
     transition: 2s;
 }
-#section5.active .wrap-box:nth-child(2) .left-clip{
+#section5.active .fades>div:nth-child(2) .left-clip{
     transform: rotate(324deg);
     transition: 2s;
 
 }
-#section5.active .wrap-box:nth-child(3) .left-clip{
+#section5.active .fades>div:nth-child(3) .left-clip{
     transform: rotate(306deg);
     transition: 2s;
 
 }
-#section5.active .wrap-box:nth-child(4) .left-clip{
+#section5.active .fades>div:nth-child(4) .left-clip{
     transform: rotate(288deg);
     transition: 2s;
 
@@ -587,13 +587,7 @@ h4{
         display: block;
     }
 }
-@media only screen and (max-width:768px){
-
-
-    #section3,#section2,#section6,#section5{
-        height: auto;
-        min-height: 100vh;
-    }
+@media only screen and(max-width: 768px){
     /*导航改变*/
     .nav-ul{
         display: none;
@@ -614,8 +608,18 @@ h4{
         width: 80%;
         margin: 0 auto;
     }
+}
+@media only screen and (max-width:767px){
+
+
+    #section3,#section2,#section6,#section5{
+        height: auto;
+        min-height: 100vh;
+    }
+
 
 }
+
 @media only screen and (max-width:415px){
 
     #section1 div.myIntro h1{
@@ -630,7 +634,7 @@ h4{
         font-size: 14px;
     }
     #section3,#section2{
-        height: 100vh;
+        height: 120vh;
     }
     .section h2{
         padding-top: 90px;
