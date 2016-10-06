@@ -458,6 +458,7 @@ p.myid{
     height: 50px;
     position: fixed;
     bottom: 10%;
+    z-index: 1000;
     cursor: pointer;
     animation: rotate 3s infinite linear;
     -webkit-animation: rotate 3s infinite linear;
@@ -489,20 +490,35 @@ p.myid{
     margin: 0 auto;
     position: relative;
     min-height: 100px;
+    overflow: hidden;
+}
+#bannerm ul{
+    width: 400%;
+    height: 100%;
 }
 #bannerm li{
-    position: absolute;
-    width: 100%;
+    position: relative;
+    width: 25%;
     height: 0;
-    padding-bottom: 30%;
+    padding-bottom: 7.5%;
     overflow: hidden;
-    left: 0;
-    top: 0;
-    display: none;
-}
-#bannerm li.active{
-    display: block;
+    float: left;
 }
 #bannerm li img{
     width: 100%;
+}
+#numberI{
+    display: block;
+    width: 100%;
+
+}
+
+@media screen and (max-width: 768px){
+    .my-sort, #artical-detail h4{
+        margin-bottom: 3em;
+    }
+    .ar-content{
+        padding-bottom: 4em;
+    }
+
 }
