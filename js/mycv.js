@@ -18,6 +18,11 @@ $(function() {
     //编辑器控制
     $("h4,.nav b").css("color","#fff");
 
+    $(".fades").addClass("fadesin");
+    $(" h1.fade").addClass("fadesin1");
+    $(" h3.fade").addClass("fadesin2");
+    $(" span.fade").addClass("fadesin3");
+
     var _top;
     var top1 = $("#section2").offset().top-30;
     var top2 = $("#section3").offset().top-30;
@@ -27,10 +32,7 @@ $(function() {
     var top6 = $("#section7").offset().top-30;
     var tops = [top1,top2,top3,top4,top5,top6];
     $(window).resize();
-    $(".fades").addClass("fadesin");
-    $(" h1.fade").addClass("fadesin1");
-    $(" h3.fade").addClass("fadesin2");
-    $(" span.fade").addClass("fadesin3");
+
     //回到顶部
     $("#top").click(function () {
         $('html,body').stop().animate({
@@ -77,43 +79,39 @@ $(function() {
     $(".nav-xs-ul li").click(function () {
        $(".nav-xs-ul").slideUp(300)
     });
+
     //页面滚动
     $(window).scroll(function () {
         //导航fixed
         var s = $(window).scrollTop();
         s > top1 ? $('#nav-bar').addClass("fixed") : $('#nav-bar').removeClass("fixed");
-
         //导航跟随滚动响应
         if((s>top1)&&(s<top2)){
             $(".nav-ul li").eq(0).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(0).addClass("active").siblings().removeClass("active");
-            $("#section2").addClass("active")
+            $("#section2").addClass("active");
         }else if((s>top2)&&(s<top3)){
             $(".nav-ul li").eq(1).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(1).addClass("active").siblings().removeClass("active");
-            $("#section3").addClass("active")
+            $("#section3").addClass("active");
         }else if((s>top3)&&(s<top4)){
             $(".nav-ul li").eq(2).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(2).addClass("active").siblings().removeClass("active");
-            $("#section4").addClass("active")
+            $("#section4").addClass("active");
         }else if((s>top4)&&(s<top5)){
             $(".nav-ul li").eq(3).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(3).addClass("active").siblings().removeClass("active");
             $("#section5").addClass("active");
-
         }else if((s>top5)&&(s<top6)){
             $(".nav-ul li").eq(4).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(4).addClass("active").siblings().removeClass("active");
-            $("#section6").addClass("active")
+            $("#section6").addClass("active");
         }else if(s>top6){
             $(".nav-ul li").eq(5).addClass("active").siblings().removeClass("active");
             $(".nav-xs-ul li").eq(5).addClass("active").siblings().removeClass("active");
-            $("#section7").addClass("active")
+            $("#section7").addClass("active");
         }
     });
-
-
-
 
 });
 
