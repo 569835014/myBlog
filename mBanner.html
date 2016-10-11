@@ -51,7 +51,7 @@
             <div class="code">
                 <pre class="codebox" data-type="blank">
                     var startX, startY, endX, endY;
-                    $("#bannerm").on("touchstart", function(e) {
+                    $("#bannerm").on("touchstart",function(e){
                             //开始位置
                             startX = e.originalEvent.targetTouches[0].clientX;
                     });
@@ -151,7 +151,7 @@
                     $(function () {
                         var startX, startY, endX, endY;
                         var size = $("#bannerm li").size();
-                        $("#bannerm").on("touchstart", function(e) {
+                        $("#bannerm").on("touchstart",function(e){
                             startX = e.originalEvent.targetTouches[0].clientX;
                             clearInterval(t);                                             //清除定时轮播
                         });
