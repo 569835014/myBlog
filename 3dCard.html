@@ -118,6 +118,7 @@
                     }
                     .fp-img-box li.show{
                         visibility: visible;
+                        z-index: 10;
                     }
                     .fp-img-box li.show.right{
                         -webkit-animation: showright 1s ease;
@@ -137,18 +138,18 @@
                     }
                     @-webkit-keyframes showright {
                         0%{ -webkit-transform: translateZ(-200px)}
-                        50%{ -webkit-transform: translate(40%, 0) scale(0.8) rotateY(-30deg)}
+                        50%{ -webkit-transform: translate(40%,0) scale(0.8) rotateY(-30deg)}
                         100%{ -webkit-transform: translateZ(0px)}
                     }
                     @keyframes showright {
                         0%{ transform: translateZ(-200px)}
-                        50%{ transform: translate(40% ,0) scale(0.8) rotateY(-30deg)}
+                        50%{ transform: translate(40%,0) scale(0.8) rotateY(-30deg)}
                         100%{ transform: translateZ(0px)}
                     }
                     @-webkit-keyframes hideright {
-                        0%{ -webkit-transform: translateZ(0px)}
+                        0%{ -webkit-transform: translateZ(0px);visibility: visible;}
                         50%{ -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(30deg)}
-                        100%{ -webkit-transform: translateZ(-200px)}
+                        100%{ -webkit-transform: translateZ(-200px);visibility: hidden;}
                     }
                     @keyframes hideright {
                         0%{ transform: translateZ(0px);visibility: visible;}
@@ -166,15 +167,16 @@
                         100%{ transform: translateZ(0px)}
                     }
                     @-webkit-keyframes hideleft {
-                        0%{ -webkit-transform: translateZ(0px)}
+                        0%{ -webkit-transform: translateZ(0px);visibility: visible;}
                         50%{ -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(30deg)}
-                        100%{ -webkit-transform: translateZ(-200px)}
+                        100%{ -webkit-transform: translateZ(-200px);visibility: hidden;}
                     }
                     @keyframes hideleft  {
                         0%{ transform: translateZ(0px);visibility: visible;}
                         50%{ transform: translate(-40% ,0) scale(0.8) rotateY(30deg)}
                         100%{ transform: translateZ(-200px);visibility: hidden}
                     }
+
                 </pre>
             </div>
             <h5>JS:</h5>
@@ -196,8 +198,7 @@
                         img.eq(0).addClass("show");
                         num.eq(0).addClass("active").siblings().removeClass("active");
                         var t = setInterval( move,3000);
-
-                        //main函数
+                        //主函数
                         function move(){
                             var i = $(".fp-num-box li.active").index();
                             i++;
@@ -207,31 +208,27 @@
                             }else if(i<=0){
                                 i=size;
                             }
-                            img.eq(i).attr("class","show right").siblings().removeClass("show");
+                            img.eq(i).attr("class","show right");
                             img.eq(i-1).attr("class","hides right");
                             num.eq(i).addClass("active").siblings().removeClass("active");
                         }
-                        //小圆点点击
+                        //圆点点击
                         num.click(function () {
                             clearInterval(t);
                             var index = $(".fp-num-box li.active").index();
                             var i = $(this).index();
-                            //点击圆点大于当前轮播
+                            //点击已激活左侧
                             if(index>i){
-                                img.eq(i).attr("class","show left").siblings().removeClass("show");
+                                img.eq(i).attr("class","show left");
                                 img.eq(index).attr("class","hides left");
-                                num.eq(i).addClass("active").siblings().removeClass("active");
-                                t = setInterval(move,3000);
-                            //点击圆点小于当前轮播
-                            }else if(index< i){
-                                img.eq(i).attr("class","show right").siblings().removeClass("show");
+                            //点击已激活右侧
+                            }else if(index < i){
+                                img.eq(i).attr("class","show right");
                                 img.eq(index).attr("class","hides right");
-                                num.eq(i).addClass("active").siblings().removeClass("active");
-                                t = setInterval(move,3000);
-                            //点击等于大于当前轮播
                             }else{
-                                t = setInterval(move,3000);
                             }
+                            num.eq(i).addClass("active").siblings().removeClass("active");
+                            t = setInterval(move,3000);
                         });
                     });
                 </pre>
@@ -266,7 +263,6 @@
         num.eq(0).addClass("active").siblings().removeClass("active");
         var t = setInterval( move,3000);
 
-
         function move(){
             var i = $(".fp-num-box li.active").index();
             i++;
@@ -276,7 +272,7 @@
             }else if(i<=0){
                 i=size;
             }
-            img.eq(i).attr("class","show right").siblings().removeClass("show");
+            img.eq(i).attr("class","show right");
             img.eq(i-1).attr("class","hides right");
             num.eq(i).addClass("active").siblings().removeClass("active");
         }
@@ -285,18 +281,15 @@
             var index = $(".fp-num-box li.active").index();
             var i = $(this).index();
             if(index>i){
-                img.eq(i).attr("class","show left").siblings().removeClass("show");
+                img.eq(i).attr("class","show left");
                 img.eq(index).attr("class","hides left");
-                num.eq(i).addClass("active").siblings().removeClass("active");
-                t = setInterval(move,3000);
             }else if(index<i){
-                img.eq(i).attr("class","show right").siblings().removeClass("show");
+                img.eq(i).attr("class","show right");
                 img.eq(index).attr("class","hides right");
-                num.eq(i).addClass("active").siblings().removeClass("active");
-                t = setInterval(move,3000);
             }else{
-                t = setInterval(move,3000);
             }
+            num.eq(i).addClass("active").siblings().removeClass("active");
+            t = setInterval(move,3000);
         });
     });
 </script>

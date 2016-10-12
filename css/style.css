@@ -698,37 +698,41 @@ p.myid{
 }
 .fp-img-box li.show{
     visibility: visible;
+    z-index: 10;
+}
+.fp-img-box li.hides{
+    z-index: 0;
 }
 .fp-img-box li.show.right{
-    -webkit-animation: showright 1s ease;
-    animation: showright 1s ease;
+    -webkit-animation: showright 1s;
+    animation: showright 1s;
 }
 .fp-img-box li.hides.right{
-    -webkit-animation: hideright 1s ease;
-    animation: hideright 1s ease;
+    -webkit-animation: hideright 1s ;
+    animation: hideright 1s ;
 }
 .fp-img-box li.show.left{
-    -webkit-animation: showleft 1s ease;
-    animation: showleft 1s ease;
+    -webkit-animation: showleft 1s ;
+    animation: showleft 1s ;
 }
 .fp-img-box li.hides.left{
-    -webkit-animation: hideleft 1s ease;
-    animation: hideleft 1s ease;
+    -webkit-animation: hideleft 1s ;
+    animation: hideleft 1s ;
 }
 @-webkit-keyframes showright {
     0%{ -webkit-transform: translateZ(-200px)}
-    50%{ -webkit-transform: translate(40%, 0) scale(0.8) rotateY(-30deg)}
+    50%{ -webkit-transform: translate(40%,0) scale(0.8) rotateY(-30deg)}
     100%{ -webkit-transform: translateZ(0px)}
 }
 @keyframes showright {
     0%{ transform: translateZ(-200px)}
-    50%{ transform: translate(40% ,0) scale(0.8) rotateY(-30deg)}
+    50%{ transform: translate(40%,0) scale(0.8) rotateY(-30deg)}
     100%{ transform: translateZ(0px)}
 }
 @-webkit-keyframes hideright {
-    0%{ -webkit-transform: translateZ(0px)}
+    0%{ -webkit-transform: translateZ(0px);visibility: visible;}
     50%{ -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(30deg)}
-    100%{ -webkit-transform: translateZ(-200px)}
+    100%{ -webkit-transform: translateZ(-200px);visibility: hidden;}
 }
 @keyframes hideright {
     0%{ transform: translateZ(0px);visibility: visible;}
@@ -746,9 +750,9 @@ p.myid{
     100%{ transform: translateZ(0px)}
 }
 @-webkit-keyframes hideleft {
-    0%{ -webkit-transform: translateZ(0px)}
+    0%{ -webkit-transform: translateZ(0px);visibility: visible;}
     50%{ -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(30deg)}
-    100%{ -webkit-transform: translateZ(-200px)}
+    100%{ -webkit-transform: translateZ(-200px);visibility: hidden;}
 }
 @keyframes hideleft  {
     0%{ transform: translateZ(0px);visibility: visible;}
@@ -785,5 +789,12 @@ p.myid{
 }@media only screen and (min-width:1536px) {
     .my-artical{
         padding-left: 15%;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .art-detail{
+        max-height: 5em;
+        overflow: hidden;
     }
 }
