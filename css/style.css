@@ -34,7 +34,19 @@ p{
 li{
     list-style: none;
 }
-
+span.cspan{
+    padding: 2px 9px;
+    display: inline-block;
+    margin: 5px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .art-img{
     padding: 0;
 }
@@ -215,6 +227,9 @@ p.myid{
 .ar-content a{
     color: #444;
     font-size: 1rem;
+}
+.art-detail p{
+    text-align: justify;
 }
 .art-detail{
     font-size: 12px;
@@ -761,6 +776,26 @@ p.myid{
 }
 
 
+/*
+    star
+*/
+.star_score{
+    text-align: center;
+}
+.star_score span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../image/star-off.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+.star_score span.active, .star_score span.select{
+    background: url(../image/star-on.png) no-repeat;
+    background-size: 100%;
+}
+
+
 @media screen and (max-width: 768px){
     .my-sort, #artical-detail h4{
         margin-bottom: 3em;
@@ -768,7 +803,6 @@ p.myid{
     .ar-content{
         padding-bottom: 4em;
     }
-
 }
 
 @media only screen and (min-width:500px) {
