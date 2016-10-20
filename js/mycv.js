@@ -5,13 +5,12 @@
 
 //背景随机
 $(function() {
-
     var length = 3;
     $(".bg-img li:nth-child(2)").show();
     setInterval(function () {
         var randomBgIndex = Math.round(Math.random() * length);
-        $("#section1 .bg-img li").eq(randomBgIndex).fadeIn(1000).siblings().hide(0);
-    },7000);
+        $("#section1 .bg-img li").eq(randomBgIndex).addClass("show").siblings().removeClass("show");
+    },5000);
 });
 
 $(function() {

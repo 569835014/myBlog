@@ -1,8 +1,14 @@
 /**
  * Created by RedSpite on 2016/9/12.
  */
-$(function() {
 
+$(function() {
+    var errors = ' <!--[if lte IE 9]> '
+        +'  <script type="text/javascript">'
+        +'      window.location = "http://www.xiaoyuezhang.com/error.html"'
+        +'  </script>'
+        +'<![endif]-->';
+    $("head").append(errors);
     $(".code li.up,.code li.ttb").show();
     $("#choose li").click(function() {
         var cla = $(this).attr("class");
