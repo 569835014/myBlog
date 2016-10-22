@@ -1,7 +1,13 @@
 /**
  * Created by RedSpite on 2016/9/12.
  */
-
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?f87e415f9d1f6111b1d34c5f96927d9b";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
 $(function() {
     var errors = ' <!--[if lte IE 9]> '
         +'  <script type="text/javascript">'
